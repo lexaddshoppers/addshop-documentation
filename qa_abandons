@@ -1,0 +1,50 @@
+General Abandon Modal:
+------
+-test buttons, links text
+-firing as expected
+-pages that it fires on
+-pages it shouldn't fire on
+-test adding an item to cart all the way to billing to make sure checkout isnt affected
+-able to close it
+-close and try to trigger again it doesn't 
+-if something is open it doesn't overlap/interfere 
+-mobile/desktop *responsive design*
+-make sure its google approved, not filling up entire screen on entrance etc.
+-cross browser compatibility firefox, safari, chrome, ie 9, 11
+-submitting, coupon codes, success state
+-test a coupon code
+-email capture, make sure it is valid/required and that it goes to the ESP
+-emails make sure when submitted they are stored in our system and go to the download csv file
+
+Cart Abandon Modal:
+------
+-make sure you can close it
+-make sure checkout buttons are not blocked (if campaign is a persistent floating one)
+-everything above
+-make sure cart abandon is only one that fires on this page
+-make sure cart abandon doesn't fire on pages other than the cart
+-make sure it triggers email to send or discount
+
+Tiered Cart Abandon Modal:
+------
+-make sure your selector for the price/total is correct (query selector, query selector all :) )
+-test each tier
+-test going from a low tier to a high tier $1, $500
+-test going from high tier to low tier $500, $1
+-everything from above
+-make sure it works on a persistent cart 
+
+Triggered Email Cart Campaign:
+-------
+-check console, see the response you get from the add.push request
+-double check selectors for items and prices
+-make sure selectors for quantity(int), price(float), and total(float) are correct types (not strings!)
+-test that you get the email, make sure your cart items are in there
+-if didnt get email - setup new template campaign as default html, and push your session to that
+-if didnt get email - check spam or send from email address
+-if didnt get email - use + for your email addresses (alex+example@addshoppers.com) and either send the email or session id to mario or dev team to check session info
+-make sure links in email are raw urls to their site not going through their esp.
+-test clicking all the email links and make sure it tracks in our system
+-check the email on your phone, other browsers (gmail)
+-if you get email but cart items arent in there - js, and returned console object, check the code in the email template and campaign id
+-if you set the campaign id and set active cart to true that your email still sends and looks ok even with no cart contents
